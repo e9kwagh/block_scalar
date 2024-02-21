@@ -40,6 +40,8 @@ def one_day_peak(date):
     return day_avg
 
 
+
+
 def month_cal():
     """month_cal"""
     datas = extractor()
@@ -72,6 +74,10 @@ def month_cal():
         all_month_avg.append(month_avg)
 
     return all_month_avg
+
+
+
+
 
 
 def file():
