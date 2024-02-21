@@ -66,13 +66,6 @@ def month_cal():
                 new_day = f"0{day}" if day <= 9 else f"{day}"              
                 date_val = f"{m_date}-{new_day} {hour_str}"      
                 current_month = [row for row in datas if row["date"].startwith(date_val) ]
-                
-                
-                
-                
-              
-                
-
            
     return len(months_data)  
     
@@ -82,7 +75,7 @@ def check_peak(date):
     date_str, time_str = date.split(" ")
     hour = time_str.split(':')[0]
 
-    day_data =[float(row["prices"]) for row in datas if row["date"].startswith(date_str) ]
+    day_data =[float(row["price"]) for row in datas if row["date"].startswith(date_str) ]
     if int(hour) <6 and int(hour)>21 :
         day_off_peak_hour = round(
         (sum([i for i in day_data[0:6]]) + sum([i for i in day_data[22:]]))
@@ -93,7 +86,7 @@ def check_peak(date):
     else : 
         day_peak_hour = round(sum([i for i in day_data[6:22]]) / len(day_data[6:22]), 2)
     
-        return(day_peak_hour)         
+        return day_peak_hour        
 
 
                 
